@@ -1,0 +1,1 @@
+Este panel se distribuye solo compilado. Uso gratuito junto con evoapi-resilient. No se permite modificarlo, revenderlo ni redistribuirlo por separado. Se ofrece tal cual, sin garantía ni soporte. Copyright Fernando Guerrero.

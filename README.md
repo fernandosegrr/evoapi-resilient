@@ -49,7 +49,7 @@ Solo se listan cambios verificados directamente en este código y en su suite de
   - Compilación TypeScript + bundle (`npm run build`).
   - Suite unitaria y de regresión (`npm run test:regressions`, 270 pruebas con `node:test` usando mocks y servidores locales).
 - **NO validado / limitaciones:**
-  - No incluye interfaz gráfica (`manager/dist` fue excluida); úsalo como API REST.
+  - El panel web (`manager/dist/`) se incluye únicamente compilado (su código fuente no es público; consulta [`MANAGER-LICENSE.txt`](./MANAGER-LICENSE.txt)).
   - No se garantiza estabilidad a largo plazo en producción para todos los flujos ni compatibilidad equivalente en MySQL (las migraciones nuevas son de PostgreSQL).
   - No todas las dependencias del proyecto están actualizadas: `npm audit --omit=dev` aún reporta vulnerabilidades en dependencias transitivas heredadas de la base `2.3.7`.
   - No se distribuyen imágenes Docker precompiladas desde este repositorio.
@@ -100,6 +100,16 @@ npm run start:prod
 ```bash
 docker build -t evoapi-resilient:local .
 ```
+
+---
+
+## Manager
+
+Este repositorio incluye el panel web de administración **ya compilado** en [`manager/dist/`](./manager/dist/) (sin source maps y sin configuración predefinida). **El código fuente del manager no es público** y su uso está sujeto a [`MANAGER-LICENSE.txt`](./MANAGER-LICENSE.txt) y [`THIRD-PARTY-NOTICES.txt`](./THIRD-PARTY-NOTICES.txt).
+
+- **Cómo abrirlo:** una vez iniciado el backend (con `DISABLE_MANAGER` desactivado / `false`), abre `http(s)://<tu-servidor>/manager` en el navegador.
+- **Cómo conectarlo:** en la pantalla de inicio de sesión, introduce la **URL base de tu backend** (por ejemplo `http://localhost:8080` o `https://api.tudominio.com`) y tu **`AUTHENTICATION_API_KEY`** configurada en `.env`.
+- **Desactivarlo:** si prefieres operar solo como API REST, define `DISABLE_MANAGER=true` en tu `.env`.
 
 ---
 
