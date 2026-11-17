@@ -1,0 +1,44 @@
+name: Reporte de fallo / Bug Report
+description: Reporta un fallo reproducible en evoapi-resilient (sin datos personales ni credenciales)
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **AVISO DE PRIVACIDAD:** Nunca pegues `apikey`s, tokens, contraseñas, URIs de base de datos, IPs privadas ni números de teléfono reales. Enmascara cualquier dato sensible antes de enviar.
+        Este es un fork no oficial sin compromiso de soporte garantizado.
+  - type: input
+    id: version
+    attributes:
+      label: Versión / Commit y entorno
+      description: Indica el commit (`git rev-parse --short HEAD`), versión de Node.js y tipo de despliegue (Docker o local).
+      placeholder: "Commit bb2a415, Node 24 Alpine, Docker"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del problema
+      description: Qué ocurre y qué esperabas que ocurriera.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: Pasos exactos para reproducir el comportamiento.
+      placeholder: |
+        1. Configurar...
+        2. Ejecutar...
+        3. Observar...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs relevantes (SIN datos personales ni apikeys)
+      description: Pega solo las líneas relevantes del log, habiendo eliminado números de teléfono, JIDs reales y credenciales.
+      render: text
+    validations:
+      required: false

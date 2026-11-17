@@ -1,0 +1,23 @@
+name: Solicitud o mejora / Feature Request
+description: Propón una mejora o cambio para evoapi-resilient
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **AVISO:** Este es un fork no oficial sin compromiso de soporte ni desarrollo. No incluyas `apikey`s, números de teléfono ni datos privados de clientes.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema o necesidad
+      description: Describe qué problema técnico resuelve esta propuesta.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solución propuesta
+      description: Cómo te gustaría que funcionara.
+    validations:
+      required: true
